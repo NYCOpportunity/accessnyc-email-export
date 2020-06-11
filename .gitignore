@@ -1,0 +1,14 @@
+.DS_Store
+
+# Ignore bundler config.
+**/.bundle
+
+# Ignore Byebug command history file.
+.byebug_history
+
+# The environment variables
+.env
+**/.env
+
+# Ignore lambda gems
+**/vendo
