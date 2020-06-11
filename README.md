@@ -1,4 +1,4 @@
-# ACCESS Emails Script
+# ACCESS NYC Emails Script
 
 A Ruby script to automate the process of retrieveing emails from ACCESS database
 and upload to Box.com as a CSV file.
@@ -19,7 +19,7 @@ brew install openssl
 # Installation
 
 ```
-cd access_emails_script
+cd ACCESS-NYC-emails-script
 bundle install
 ```
 
