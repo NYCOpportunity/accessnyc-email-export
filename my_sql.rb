@@ -31,7 +31,9 @@ class MySQL
   def get_emails_from_db
     date_range_query = "SELECT address, date FROM messages WHERE DATE(date) " \
                         "BETWEEN '#{modify_date(@timestamp)}'" \
-                          "AND '#{modify_date(Time.now.utc)}'"
+                          "AND '#{modify_date(Time.now.utc)}'" \
+                            "AND msg_type = 'email'"
+
     @client.query(date_range_query)
   end
 

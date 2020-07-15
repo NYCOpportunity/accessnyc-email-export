@@ -40,7 +40,7 @@ class BoxApi
     client.folder_from_id(box_folder_id)
   end
 
-  def upload_file_to_box(file_path, file_name, box_folder_id)
+  def upload(file_path, file_name, box_folder_id)
     client.upload_file(file_path, self.folder(box_folder_id))
   rescue Boxr::BoxrError => err
     # If box erred b/c file already exists, we should replace file with new copy
