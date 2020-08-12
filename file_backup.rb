@@ -26,6 +26,6 @@ class BackupFile
   attr_reader :rows, :date
 
   def filename
-    "access-emails-#{date}"
+    "access-emails-#{date}.csv"
   end
 end
