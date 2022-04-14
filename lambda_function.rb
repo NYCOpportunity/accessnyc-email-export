@@ -14,9 +14,9 @@ require 'pry'
 require 'ostruct'
 
 config = OpenStruct.new(
-  year: ARGV[0],
-  month: ARGV[1],
-  day: ARGV[2],
+  month: ARGV[0],
+  day: ARGV[1],
+  year: ARGV[2],
   box_user_id: ENV['BOX_USER_ID'],
   box_folder_id: ENV['BOX_FOLDER_ID'],
   local_path: ENV['LOCAL_PATH']

@@ -13,14 +13,14 @@ This application uses Ruby version **v2.5.8**. For more information on installin
 Make sure to have [MySQL](https://www.mysql.com/) installed and [OpenSSL](https://www.openssl.org/) (which can be done using [Homebrew](https://brew.sh/) for MacOS).
 
 ```shell
-$ brew install mysql && brew install openssl
+brew install mysql && brew install openssl
 ```
 
 ## Installation
 
 ```shell
-$ cd ACCESS-NYC-emails-script
-$ bundle install
+cd ACCESS-NYC-emails-script
+bundle install
 ```
 
 If you get the following mysql2 error message:
@@ -33,7 +33,7 @@ Make sure that `gem install mysql2 -v '0.5.2' --source 'https://rubygems.org/'` 
 Install the gem with the following command:
 
 ```shell
-$ gem install mysql2 -v '0.5.2' -- --with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include
+gem install mysql2 -v '0.5.2' -- --with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include
 ```
 
 Then, run `bundle install` again.
@@ -54,13 +54,13 @@ Constant      | Description
 The script accepts three arguments for the year, month, and day representing the date to start the range of exported emails. The range will end at the time the script runs.
 
 ```shell
-$ ruby lambda_function.rb {{ YYYY }} {{ MM }} {{ DD }}
+ruby lambda_function.rb {{ MM }} {{ DD }} {{ YYYY }}
 ```
 
-Replace `{{ YYYY }}`, `{{ MM }}`, `{{ DD }}` with the **year**, **month**, and **day**, respectively.
+Replace `{{ MM }}`, `{{ DD }}`, `{{ YYYY }}` with the **month**, **day**, and **year** respectively.
 
 ```shell
-$ ruby lambda_function.rb 2020 06 01
+ruby lambda_function.rb 06 01 2020
 ```
 
 A CSV titled **access-nyc-emails-{{ script run date }}.csv** will be saved to the directory specified in the `LOCAL_PATH` constant with email entries starting on 06/01/2020 and ending on the date the script ran.
